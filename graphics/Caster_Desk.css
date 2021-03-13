@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
+
+
+.caster {
+    position: absolute;
+    top: 730px;
+    max-width: 720px;
+    text-align: left;
+    letter-spacing: 0px;
+    text-shadow: 0px 3px 6px #00000029;
+    font: normal normal 900 45px/54px 'Orbitron';
+    letter-spacing: 0px;
+    color: #FFFFFF;
+}
+
+
+body {
+	background: black 0% 0% no-repeat padding-box;
+	background-image: url("casterDesk1x.png");
+	top: 0px;
+	left: 0px;
+	width: 1920px;
+	height: 1080px;
+	opacity: 1;
+}
+
+#leftCaster {
+    left: 190px;
+    text-align: left;
+}
+
+#rightCaster {
+    right: 190px;
+    text-align: right;
+
+}
+

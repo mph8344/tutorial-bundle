@@ -34,7 +34,15 @@
         "width": 2,
         "file": "name.html",
         "headerColor": "#525F78"
+      },
+      {
+        "name": "casters",
+        "title": "Casters",
+        "width": 2,
+        "file": "casters.html",
+        "headerColor": "#525F78"
       }
+
     ],
     "graphics": [
       {
@@ -46,7 +54,13 @@
         "file": "lowerthird.html",
         "width": 1920,
         "height": 1080
+      },
+      {
+        "file": "Caster_Desk.html",
+        "width": 1920,
+        "height": 1080
       }
+
     ]
   },
   "dependencies": {
