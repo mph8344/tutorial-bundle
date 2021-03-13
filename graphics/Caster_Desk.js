@@ -5,6 +5,10 @@ const LCaster = document.getElementById('leftCaster');
 const RCaster = document.getElementById('rightCaster');
 
 nodecg.listenFor('updateCasters', (data) => {
-	LCaster.innerHTML = data.leftCaster
-	RCaster.innerHTML = data.rightCaster
+
+	var upperLeft = data.leftCaster.toUpperCase();
+	var upperRight = data.rightCaster.toUpperCase();
+
+	LCaster.innerHTML = upperLeft
+	RCaster.innerHTML = upperRight
 })

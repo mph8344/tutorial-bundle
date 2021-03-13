@@ -1,16 +1,19 @@
+@import url("https://use.typekit.net/eiq2vgd.css");
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
-
 
 .caster {
     position: absolute;
-    top: 730px;
+    top: 760px;
     max-width: 720px;
     text-align: left;
     letter-spacing: 0px;
     text-shadow: 0px 3px 6px #00000029;
-    font: normal normal 900 45px/54px 'Orbitron';
+    font-family: Orbitron, sans-serif;
+    font-weight: 700;
+    font-size: 54px;
     letter-spacing: 0px;
     color: #FFFFFF;
+    text-shadow: 0px 5px 10px #00000029;
 }
 
 
@@ -25,12 +28,12 @@ body {
 }
 
 #leftCaster {
-    left: 190px;
+    left: 90px;
     text-align: left;
 }
 
 #rightCaster {
-    right: 190px;
+    right: 90px;
     text-align: right;
 
 }
