@@ -16,10 +16,16 @@
     text-shadow: 0px 5px 10px #00000029;
 }
 
+#casters {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+}
 
 body {
 	background: black 0% 0% no-repeat padding-box;
-	background-image: url("casterDesk1x.png");
 	top: 0px;
 	left: 0px;
 	width: 1920px;
