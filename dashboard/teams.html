@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
 </head>
@@ -9,27 +10,23 @@
 	<div>
 		<p>Team 1:</p>
 		<input type="text" id="team1Name">
-		<!--select name="leftSide" id="leftSide">
-			<option value="DEF">Defense</option>
-			<option value="ATK">Attack</option>
-		</select-->
+		<br/>
+		<select name="filenames1" id="team1Logo">
+		</select>
 	</div>
 	<div>
 		<p>Team 2:</p>
 		<input type="text" id="team2Name" >
-		<!--select name="rightSide" id="rightSide">
-			<option value="DEF">Defense</option>
-			<option value="ATK">Attack</option>
-		</select-->
-		
+		<br/>
+		<select name="filenames" id="team2Logo">
+		</select>
 	</div>
+
     <br/>
 	<button onclick="update()">Update</button>
 	<button onclick="swapSides()">Swap Sides</button>
 	<button onclick="reset()">Emergency Reset</button>
 
-	<!--button onclick="scoreTeam1()">Team 1</button>
-	<button onclick="scoreTeam2()">Team 2</button-->
 
 	<script src="teams.js"></script>
 </body>

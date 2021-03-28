@@ -15,17 +15,24 @@
     "compatibleRange": "^1.1.1",
     "dashboardPanels": [
       {
-        "name": "score",
-        "title": "Score",
-        "width": 2,
-        "file": "score.html",
-        "headerColor": "#525F78"
-      },
-      {
         "name": "teams",
         "title": "Teams",
         "width": 2,
         "file": "teams.html",
+        "headerColor": "#525F78"
+      },
+      {
+        "name": "flavortext",
+        "title": "Flavor Text",
+        "width": 2,
+        "file": "flavor.html",
+        "headerColor": "#525F78"
+      },
+      {
+        "name": "maps",
+        "title": "Map Scoreline",
+        "width": 2,
+        "file": "score.html",
         "headerColor": "#525F78"
       },
       {
@@ -41,12 +48,30 @@
         "width": 2,
         "file": "casters.html",
         "headerColor": "#525F78"
+      },
+      {
+        "name": "background",
+        "title": "Background",
+        "width": 2,
+        "file": "background.html",
+        "headerColor": "#525F78"
+      },
+      {
+        "name": "countdown",
+        "title": "Countdown",
+        "width": 2,
+        "file": "countdown.html",
+        "headerColor": "#525F78"
       }
-
     ],
     "graphics": [
       {
         "file": "teamoverlay.html",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "file": "gameBG.html",
         "width": 1920,
         "height": 1080
       },
@@ -59,12 +84,30 @@
         "file": "Caster_Desk.html",
         "width": 1920,
         "height": 1080
+      },
+      {
+        "file": "brb_screen.html",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "file": "pre_screen.html",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "file": "playerCams.html",
+        "width": 1920,
+        "height": 1080
       }
-
     ]
   },
   "dependencies": {
+    "browserify": "^17.0.0",
+    "file-system": "^2.2.2",
     "gsap": "^3.6.0",
-    "sass": "^1.32.8"
+    "requirejs": "^2.3.6",
+    "sass": "^1.32.8",
+    "tedious": "^11.0.6"
   }
 }

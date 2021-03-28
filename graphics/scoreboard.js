@@ -24,44 +24,6 @@ nodecg.listenFor('EditTeam', (newVal) => {
 
 })
 
-
-const team1Box1 = document.getElementById('leftScore1');
-const team1Box2 = document.getElementById('leftScore2');
-
-const team2Box1 = document.getElementById('rightScore1');
-const team2Box2 = document.getElementById('rightScore2');
-
-nodecg.listenFor('ScoreTeams', (data) => {
-	
-	if (data.score1 == 0) {
-		team1Box1.style.backgroundColor = "lightgrey";
-		team1Box2.style.backgroundColor = "lightgrey";
-	}
-
-	if (data.score1 == 1) {
-		team1Box1.style.backgroundColor = "red";
-	}
-
-	if (data.score1 > 1) {
-		team1Box1.style.backgroundColor = "red";
-		team1Box2.style.backgroundColor = "red";
-	}
-	
-	//Team2
-
-	if (data.score2 == 0) {
-		team2Box1.style.backgroundColor = "lightgrey";
-		team2Box2.style.backgroundColor = "lightgrey";
-	}
-
-	if (data.score2 == 1) {
-		team2Box1.style.backgroundColor = "red";
-	}
-
-	if (data.score2 > 1) {
-		team2Box1.style.backgroundColor = "red";
-		team2Box2.style.backgroundColor = "red";
-	}
-	
-
+nodecg.listenFor('bo3Toggle', (data) => {
+	console.log(data.value);
 })

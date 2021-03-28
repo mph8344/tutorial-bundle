@@ -1,0 +1,73 @@
+@import url("https://use.typekit.net/eiq2vgd.css");
+
+body {
+	font-family: Torque;
+	font-weight: bold;
+    font-size: 32px;
+	background: white;
+    color: white;
+}
+
+#casters {
+    z-index: -1;
+    position: absolute;
+    top: 0px
+}
+
+.counter {
+    position: absolute;
+    font-size: 48px;
+    bottom: 20px;
+    left: 270px;
+    width: fit-content;
+}
+
+
+.matchbox {
+    position: absolute;
+    left: 35px;
+    top: 50px;
+    width: fit-content;
+    height: fit-content;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.upcoming_matches {
+    
+    display: flex;
+    height: fit-content;
+    color: white;
+    
+    
+    padding: 5px;
+    align-items: center;
+}
+
+.flavorText {
+    font-size: 3vw;
+    position: absolute;
+    max-width: 1325px;
+    bottom: 65px;
+    left: 525px;
+}
+
+
+p {
+    width: fit-content;
+    margin: 0;
+    height: fit-content;
+    padding: 10px;
+}
+
+#text {
+    margin:auto;
+}
+
+img {
+    width: 125px;
+    clip-path: circle(50% at 50% 50%);
+}

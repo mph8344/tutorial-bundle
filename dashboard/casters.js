@@ -3,11 +3,7 @@ const rightCaster = document.getElementById('rightCaster')
 
 
 function update() {
-	const data = {leftCaster: leftCaster.value, rightCaster: rightCaster.value, game: "valorant"}
+	const data = {leftCaster: leftCaster.value, rightCaster: rightCaster.value}
 	nodecg.sendMessage('updateCasters', data)
 }
 
-function csgoUpdate() {
-	const data = {leftCaster: leftCaster.value, rightCaster: rightCaster.value, game: "cs"}
-	nodecg.sendMessage('updateCasters', data)
-}

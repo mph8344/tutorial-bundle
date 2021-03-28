@@ -1,27 +1,21 @@
 @import url("https://use.typekit.net/eiq2vgd.css");
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
 
 .caster {
     position: absolute;
-    top: 760px;
-    max-width: 720px;
-    text-align: left;
+    top: 670px;
+    
+    text-align: center;
     letter-spacing: 0px;
     text-shadow: 0px 3px 6px #00000029;
-    font-family: Orbitron, sans-serif;
+    font-family: Play, sans-serif;
     font-weight: 700;
     font-size: 54px;
     letter-spacing: 0px;
     color: #FFFFFF;
     text-shadow: 0px 5px 10px #00000029;
-}
-
-#casters {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
+    width: 810px;
 }
 
 body {
@@ -34,13 +28,13 @@ body {
 }
 
 #leftCaster {
-    left: 90px;
-    text-align: left;
+    left: 110px;
+    text-align: center;
 }
 
 #rightCaster {
-    right: 90px;
-    text-align: right;
+    right: 110px;
+    text-align: center;
 
 }
 
