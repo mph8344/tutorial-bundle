@@ -8,7 +8,6 @@ body {
     color: white;
 }
 
-
 div {
     position: absolute;
     text-align: center;
@@ -32,6 +31,30 @@ div {
     left: 615px;
 }
 #cam5 {
+    top: 800px;
+    left: 1115px;
+}
+
+
+
+#cam6 {
+    top: 470px;
+    left: 370px;
+}
+
+#cam7 {
+    top: 470px;
+    left: 865px;
+}
+#cam8 {
+    top: 470px;
+    left: 1360px;
+}
+#cam9 {
+    top: 800px;
+    left: 615px;
+}
+#cam10 {
     top: 800px;
     left: 1115px;
 }

@@ -17,7 +17,7 @@ body {
     position: absolute;
     width: 155px;
     height: 38px;
-    top: 32px;
+    top: 33px;
     
 }
 
@@ -28,6 +28,7 @@ body {
     top: 32px;
     font-size: 30px;
     text-align: center;
+    color: black;
 }
 
 .side {
@@ -40,25 +41,15 @@ body {
    
 }
 
-#leftSide {
-    left: 770px;
-    color: #FF5500;
-    
-}
-#rightSide {
-    right: 770px;
-    color: black;
-}
-
-
 
 #leftScore {
-    left: 815px;
-    color: #FF5500;
+    left: 220px;
+    display: none;
+    
 }
 #rightScore {
-    right: 815px;
-    color: black;
+    right: 220px;
+    display: none;
 }
 
 .teamText {

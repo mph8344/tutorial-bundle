@@ -22,6 +22,13 @@
         "headerColor": "#525F78"
       },
       {
+        "name": "teamCams",
+        "title": "Team Cameras",
+        "width": 2,
+        "file": "cameras.html",
+        "headerColor": "#525F78"
+      },
+      {
         "name": "flavortext",
         "title": "Flavor Text",
         "width": 2,
@@ -96,16 +103,23 @@
         "height": 1080
       },
       {
-        "file": "playerCams.html",
+        "file": "team1Cams.html",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "file": "team2Cams.html",
         "width": 1920,
         "height": 1080
       }
+
     ]
   },
   "dependencies": {
     "browserify": "^17.0.0",
     "file-system": "^2.2.2",
     "gsap": "^3.6.0",
+    "node-php": "^0.0.1",
     "requirejs": "^2.3.6",
     "sass": "^1.32.8",
     "tedious": "^11.0.6"

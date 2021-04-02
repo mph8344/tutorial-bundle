@@ -1,6 +1,6 @@
 
-const team1Rep = nodecg.Replicant('team1score');
-const team2Rep = nodecg.Replicant('team2score');
+const team1Rep = nodecg.Replicant('team1score', {defaultValue: 0});
+const team2Rep = nodecg.Replicant('team2score', {defaultValue: 0});
 
 const bo3Box = document.getElementById("checkbox");
 
