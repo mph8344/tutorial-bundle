@@ -2,7 +2,7 @@ $(function() {
 
 	$.ajax({
 		type: 'GET',
-		url: 'https://open.faceit.com/data/v4/championships/344a68a3-873c-4c98-b70f-1acef5040dbf/matches?type=past&offset=0&limit=5',
+		url: 'https://open.faceit.com/data/v4/championships/403d4b88-9c57-46e6-826d-b2d702f97098/matches?type=upcoming&offset=0&limit=10',
 
 		headers: {Authorization: "Bearer c5bb31ef-5e33-4bae-a854-49fd35f032f2"} ,
 		success: function(data) {
