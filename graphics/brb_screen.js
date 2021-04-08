@@ -1,8 +1,20 @@
-$(function() {
+
+var myTimer;
+
+
+nodecg.listenFor('updateBG', (data) => {
+
+	var token;
+
+	if (data.game == 'cs') {
+		token = "403d4b88-9c57-46e6-826d-b2d702f97098";
+	} else {
+		token = "3bc6ab55-aae7-45a3-8695-dc64590d0616";
+	}
 
 	$.ajax({
 		type: 'GET',
-		url: 'https://open.faceit.com/data/v4/championships/403d4b88-9c57-46e6-826d-b2d702f97098/matches?type=upcoming&offset=0&limit=10',
+		url: `https://open.faceit.com/data/v4/championships/${token}/matches?type=upcoming&offset=0&limit=10`,
 
 		headers: {Authorization: "Bearer c5bb31ef-5e33-4bae-a854-49fd35f032f2"} ,
 		success: function(data) {
@@ -10,9 +22,10 @@ $(function() {
 		}
 	})
 
+
 })
 
-var myTimer;
+
 
 nodecg.listenFor('timechange', (data) => {
 	var $timer = $(".counter")
@@ -64,8 +77,11 @@ function update() {
 	$timer.html(ts[1]+":"+ts[2]);
 }
 
+var matches = [];
 
 function tryData(data) {
+
+	matches = [];
 
 	data.forEach(element => {
 		var teamOneName = element.teams.faction1.avatar
@@ -76,15 +92,17 @@ function tryData(data) {
 
 	})
 
+	displayClass(0);
 }
 
-var matches = [];
 
-(function displayClass(i) {
+
+function displayClass(i) {
 
     $('.upcoming_matches').html(matches[i]).fadeIn(1000, function() {
+
         $(this).delay(2000).fadeOut(1000, function() {
             displayClass((i + 1) % matches.length);
         });
     });
-})(0);
+}
