@@ -5,8 +5,17 @@ var matches = [];
 
 nodecg.listenFor('changeMatches', (data) => {
 	matches = data.matches;
-	console.log(data.past);
-	$('.scroller').html(data.past);
+	//console.log(data.past);
+
+	var text = data.past[0] + " - " + data.scores[0];
+
+	for (let i = 1; i < data.past.length; i++) {
+
+		text += ("  |  " + data.past[i] + " - " + data.scores[i])
+
+	}
+
+	$('.scroller').html(text);
 })
 
 $(function() {
