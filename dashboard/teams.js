@@ -1,13 +1,12 @@
 const team1Input = document.getElementById('team1Name')
 const team2Input = document.getElementById('team2Name')
 
-function update() {
+const team1Rep = nodecg.Replicant("team1Name");
+const team2Rep = nodecg.Replicant("team2Name");
 
-	const data = {
-		team1Name: team1Input.value,
-		team2Name: team2Input.value,
-	}
-	nodecg.sendMessage('CreateTeams', data);
+function update() {
+	team1Rep.value = team1Input.value;
+	team2Rep.value = team2Input.value;
 }
 
 
@@ -26,7 +25,6 @@ function updateT1Players() {
 }
 
 function updateT2Players() {
-
 	const team2Data = {
 		p1: $("#team2P1").val(),
 		p2: $("#team2P2").val(),
@@ -34,8 +32,11 @@ function updateT2Players() {
 		p4: $("#team2P4").val(),
 		p5: $("#team2P5").val(),
 	}
-
 	nodecg.sendMessage("team2Names", team2Data);
+}
 
-
+function swap() {
+	var temp = team1Rep.value;
+	team1Rep.value = team2Rep.value;
+	team2Rep.value = temp;
 }

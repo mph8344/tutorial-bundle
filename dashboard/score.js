@@ -25,6 +25,14 @@ function subTeam2() {
 	}
 }
 
+function swap() {
+
+	var temp = team1Rep.value;
+	team1Rep.value = team2Rep.value;
+	team2Rep.value = temp;
+
+}
+
 function resetScore() {
 	team1Rep.value = 0;
 	team2Rep.value = 0;

@@ -1,31 +1,17 @@
 
 var myTimer;
 
+var matches = [];
 
-nodecg.listenFor('updateBG', (data) => {
-
-	var token;
-
-	if (data.game == 'cs') {
-		token = "403d4b88-9c57-46e6-826d-b2d702f97098";
-	} else {
-		token = "3bc6ab55-aae7-45a3-8695-dc64590d0616";
-	}
-
-	$.ajax({
-		type: 'GET',
-		url: `https://open.faceit.com/data/v4/championships/${token}/matches?type=upcoming&offset=0&limit=10`,
-
-		headers: {Authorization: "Bearer c5bb31ef-5e33-4bae-a854-49fd35f032f2"} ,
-		success: function(data) {
-			tryData(data.items);
-		}
-	})
-
-
+nodecg.listenFor('changeMatches', (data) => {
+	matches = data.matches;
+	console.log(data.past);
+	$('.scroller').html(data.past);
 })
 
-
+$(function() {
+	displayClass(0);
+})
 
 nodecg.listenFor('timechange', (data) => {
 	var $timer = $(".counter")
@@ -45,21 +31,12 @@ nodecg.listenFor('timechange', (data) => {
 	
 })
 
-nodecg.listenFor('flavorChange', (data) => {
-
-	var text = data.text.toUpperCase();
-	var $flavor = $("#flavor");
-	$flavor.text(text);
-
-
-})
-
-
-
 function update() {
 	var $timer = $(".counter")
+	
 	var myTime = $timer.html();
 	var ss = myTime.split(":");
+
 	var dt = new Date();
 	dt.setHours(0);
 	dt.setMinutes(ss[0]);
@@ -77,27 +54,39 @@ function update() {
 	$timer.html(ts[1]+":"+ts[2]);
 }
 
-var matches = [];
 
-function tryData(data) {
+nodecg.listenFor('flavorChange', (data) => {
 
-	matches = [];
+	var text = data.text.toUpperCase();
+	var $flavor = $("#flavor");
+	$flavor.text(text);
 
-	data.forEach(element => {
-		var teamOneName = element.teams.faction1.avatar
-		var teamTwoName = element.teams.faction2.avatar
+
+})
+
+
+
+
+// function tryData(data) {
+
+// 	matches = [];
+
+// 	data.forEach(element => {
+// 		var teamOneName = element.teams.faction1.avatar
+// 		var teamTwoName = element.teams.faction2.avatar
 		
-		matches.push(`<img src="${teamOneName}"/> <p>VS</p> <img src="${teamTwoName}"/>`)
+// 		matches.push(`<img src="${teamOneName}"/> <p>VS</p> <img src="${teamTwoName}"/>`)
 	
 
-	})
+// 	})
 
-	displayClass(0);
-}
-
-
+// 	displayClass(0);
+// }
 
 function displayClass(i) {
+	if (isNaN(i)) {
+		i = 0;
+	}
 
     $('.upcoming_matches').html(matches[i]).fadeIn(1000, function() {
 

@@ -8,6 +8,15 @@ body {
     color: white;
 }
 
+@keyframes slide {
+    from { left: 100%;}
+    to { left: -100%;}
+}
+@-webkit-keyframes slide {
+    from { left: 100%;}
+    to { left: -100%;}
+}
+
 #casters {
     z-index: -1;
     position: absolute;
@@ -48,13 +57,70 @@ body {
 }
 
 .flavorText {
-    font-size: 3vw;
+    font-size: 2.75vw;
     position: absolute;
-    max-width: 1325px;
-    bottom: 65px;
-    left: 525px;
+    min-width: 1325px;
+    bottom: 110px;
+    left: 500px;
 }
 
+
+
+.scrolling {
+    font-size: 2vw;
+    position: absolute;
+    bottom: 60px;
+    left: 500px;
+    animation-name: slide;
+    animation-duration: 20s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    -webkit-animation-name: slide;
+    -webkit-animation-duration: 20s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+}
+
+.marquee {
+    font-family: urw-din-semi-condensed, sans-serif;
+
+font-weight: 700;
+
+font-style: normal;
+    height: 65px;
+    top: 960px;
+    position: relative;
+    left: 500px;
+    overflow: hidden;
+    min-width: 1300px;
+}
+
+.scroller {
+    white-space: nowrap;
+    font-size: 2vw;
+    text-align: left;
+    position: absolute;
+    width: fit-content;
+    margin: 0;
+    height: 100%;
+    transform: translateX(100%);
+    top: 0px;
+    animation: scroll-left 40s linear infinite;
+    
+}
+
+@keyframes scroll-left {
+    0% {
+        -moz-transform: translateX(100%);
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+    }
+    100% {
+        -moz-transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+}
 
 p {
     width: fit-content;

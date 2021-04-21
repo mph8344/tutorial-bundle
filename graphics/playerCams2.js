@@ -5,6 +5,8 @@ const p3R = document.getElementById("cam8");
 const p4R = document.getElementById("cam9");
 const p5R = document.getElementById("cam10");
 
+const logoDiv = document.getElementById("teamLogo");
+
 
 nodecg.listenFor('team2Names', (data) => {
 
@@ -13,5 +15,11 @@ nodecg.listenFor('team2Names', (data) => {
     p3R.innerText = data.p3;
     p4R.innerText = data.p4;
     p5R.innerText = data.p5;
+
+})
+
+nodecg.listenFor('updateLogos', (data) => {
+
+    $("#teamLogo").html(`<img src="${data.team2Logo}">`)
 
 })

@@ -8,6 +8,17 @@ const team2Score = document.getElementById('rightScore')
 const team1Rep = nodecg.Replicant('team1score');
 const team2Rep = nodecg.Replicant('team2score');
 
+const name1Rep = nodecg.Replicant('team1Name');
+const name2Rep = nodecg.Replicant('team2Name');
+
+name1Rep.on('change', (value) => {
+	team1.innerHTML = value.toUpperCase();
+})
+
+name2Rep.on('change', (value) => {
+	team2.innerHTML = value.toUpperCase();
+})
+
 
 team1Rep.on('change', (value) => {
 

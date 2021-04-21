@@ -17,3 +17,10 @@ nodecg.listenFor('team1Names', (data) => {
     p5L.innerText = data.p5;
 
 })
+
+
+nodecg.listenFor('updateLogos', (data) => {
+
+    $("#teamLogo").html(`<img src="${data.team1Logo}">`)
+
+})

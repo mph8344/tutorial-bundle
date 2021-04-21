@@ -8,6 +8,14 @@ body {
     color: white;
 }
 
+img {
+    position: absolute;
+    width: 250px;
+    top: 50px;
+    left: 50px;
+}
+
+
 div {
     position: absolute;
     text-align: center;
