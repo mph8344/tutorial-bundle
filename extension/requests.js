@@ -63,88 +63,86 @@ function tryData(data, matches) {
 }
 
 
-function addPastData(data, matches) {
+function addPastData(data, scores) {
 
-
-  var options = {
-    method: 'get',
-    baseURL: 'https://open.faceit.com/data/v4/matches/',
-    headers: {
-      Authorization: `Bearer ${keyconfig.Authorization}`
-    }
-  }
-
-  var matchInstance = axios.create(options);
-
+  var count = 0;
+  var matches = []
   data.forEach(element => {
 
+    var matchID = element.match_id;
     var team1Name = element.teams.faction1.name;
     var team2Name = element.teams.faction2.name;
 
-    var matchString = `${element.match_id}/stats`
-    
-    var score = '(FFW)';
-    var str = (element.results.winner == 'faction1') ? `${team1Name} vs ${team2Name}` : `${team2Name} vs ${team1Name}`;
-    var match = str;
-    matchInstance.get(matchString).then(response => {
-    
-      var rounds = response.data.rounds;
-      if (rounds.length > 2) {
-        score = '(2-1)';
-      } else if (rounds.length) {
-        score = '(2-0)';
-      } else {
-        score = '(FFW)';
+    var options = {
+      url: `https://open.faceit.com/data/v4/matches/${matchID}/stats`,
+      headers: {
+        Authorization: `Bearer ${keyconfig.Authorization}`
       }
+    }
+
+    var winnerIsOne = element.results.winner == 'faction1';
 
 
-      match = match + " - " + score;
-      matches.push(match);
-
-
-    }).catch(error => {
-      
-      score = '(FFW)';
-
-      match = match + " - " + score;
-      matches.push(match);
+    
+    request.get(options, (err, response, body) => {
+      var o = JSON.parse(body);
+      if (o.rounds != undefined && o.rounds.length > 2) {
+        scores.push('(2-1)')
+        ///console.log(o.rounds.length);
+      } else if (o.rounds != undefined) {
+        scores.push('(2-0)');
+      } else {
+        scores.push('(FFW)');
+      }
     })
+
+    var str;
+    if (winnerIsOne) {
+      str = `${team1Name} vs ${team2Name}`;
+    } else {
+      str = `${team2Name} vs ${team1Name}`;
+    }
+    
+     
+    matches.push(str);
+
 
   })
 
+  return matches;
 }
 
 
 const instance = axios.create(params);
 
-const valPast = nodecg.Replicant('valPast');
-const csPast = nodecg.Replicant('csPast');
-const csCurrent = nodecg.Replicant('csCurrent');
-const valCurrent = nodecg.Replicant('valCurrent');
+var csMatches = [];
+var valMatches = [];
+var csScores = [];
+var valScores = [];
+var csPastMatches = [];
+var valPastMatches = [];
+
 
 function refreshLists() {
 
-  csCurrent.value = [];
-  valCurrent.value = [];
-  csPast.value = [];
-  valPast.value = [];
-
   instance.get('/403d4b88-9c57-46e6-826d-b2d702f97098/matches?type=upcoming&offset=0&limit=10').then(response => {
-    tryData(response.data.items, csCurrent.value)
+    csMatches = [];
+    tryData(response.data.items, csMatches)
   })
 
   instance.get('/3bc6ab55-aae7-45a3-8695-dc64590d0616/matches?type=upcoming&offset=0&limit=10').then(response => {
-    tryData(response.data.items, valCurrent.value)
+    valMatches = [];
+    tryData(response.data.items, valMatches)
   })
 
   instance.get('/403d4b88-9c57-46e6-826d-b2d702f97098/matches?type=past&offset=0&limit=5').then(response => {
-    addPastData(response.data.items, csPast.value);
-
+    csScores = [];
+    csPastMatches = addPastData(response.data.items, csScores);
   })
 
   instance.get('/3bc6ab55-aae7-45a3-8695-dc64590d0616/matches?type=past&offset=0&limit=5').then(response => {
-    addPastData(response.data.items, valPast.value);
-
+    valScores = [];
+    valPastMatches = addPastData(response.data.items, valScores);
   })
 
 }
@@ -179,11 +177,9 @@ connection.on("connect", err => {
 
   nodecg.listenFor('updateBG', (data) => {
     if (data.game == 'cs') {
-      nodecg.sendMessage('csMatches')
-      //console.log(csPast.value);
+      nodecg.sendMessage('changeMatches', {matches: csMatches, past: csPastMatches, scores: csScores})
     } else {
-      //console.log(valPast.value);
-      nodecg.sendMessage('valMatches')
+      nodecg.sendMessage('changeMatches', {matches: valMatches, past: valPastMatches, scores: valScores})
     }
   })
 
