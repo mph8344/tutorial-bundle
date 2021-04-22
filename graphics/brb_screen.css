@@ -106,14 +106,14 @@ font-style: normal;
     height: 100%;
     transform: translateX(100%);
     top: 0px;
-    animation: scroll-left 40s linear infinite;
+    animation: scroll-left 60s linear infinite;
     
 }
 
 @keyframes scroll-left {
     0% {
-        -moz-transform: translateX(80%);
-        -webkit-transform: translateX(80%);
+        -moz-transform: translateX(60%);
+        -webkit-transform: translateX(60%);
         transform: translateX(60%);
     }
     100% {

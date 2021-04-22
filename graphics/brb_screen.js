@@ -3,18 +3,32 @@ var myTimer;
 
 var matches = [];
 
-nodecg.listenFor('changeMatches', (data) => {
-	matches = data.matches;
-	//console.log(data.past);
+const valPast = nodecg.Replicant('valPast');
+const csPast = nodecg.Replicant('csPast');
+const csCurrent = nodecg.Replicant('csCurrent');
+const valCurrent = nodecg.Replicant('valCurrent');
 
-	var text = data.past[0] + " - " + data.scores[0];
+nodecg.listenFor('csMatches', () => {
+	console.log('here');
+	matches = csCurrent.value;
 
-	for (let i = 1; i < data.past.length; i++) {
+	var text = csPast.value[0];
 
-		text += ("  |  " + data.past[i] + " - " + data.scores[i])
-
+	for (let i = 1; i < csPast.value.length; i++) {
+		text += ("  |  " + csPast.value[i])
 	}
+	$('.scroller').html(text);
+})
 
+nodecg.listenFor('valMatches', () => {
+	console.log('here');
+	matches = valCurrent.value;
+
+	var text = valPast.value[0];
+
+	for (let i = 1; i < valPast.value.length; i++) {
+		text += ("  |  " + valPast.value[i])
+	}
 	$('.scroller').html(text);
 })
 
