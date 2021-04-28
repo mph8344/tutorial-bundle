@@ -114,7 +114,7 @@ font-style: normal;
     0% {
         -moz-transform: translateX(60%);
         -webkit-transform: translateX(60%);
-        transform: translateX(60%);
+        transform: translateX(55%);
     }
     100% {
         -moz-transform: translateX(-100%);
