@@ -120,7 +120,6 @@ function refreshLists() {
 		.then((response) => {
 			csMatches = [];
 			tryData(response.data.items, csMatches);
-			console.log(csMatches);
 		});
 
 	instance

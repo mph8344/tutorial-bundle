@@ -1,138 +1,143 @@
 {
-  "name": "valorant_manager",
-  "version": "0.0.0",
-  "files": [
-    "dashboard",
-    "graphics",
-    "extension.js",
-    "extension"
-  ],
-  "keywords": [
-    "",
-    "nodecg-bundle"
-  ],
-  "nodecg": {
-    "compatibleRange": "^1.1.1",
-    "dashboardPanels": [
-      {
-        "name": "teams",
-        "title": "Teams",
-        "width": 2,
-        "file": "teams.html",
-        "headerColor": "#525F78"
-      },
-      {
-        "name": "logos",
-        "title": "Logos",
-        "width": 2,
-        "file": "logos.html",
-        "headerColor": "#525F78"
-      },
-      {
-        "name": "teamCams",
-        "title": "Team Cameras",
-        "width": 2,
-        "file": "cameras.html",
-        "headerColor": "#525F78"
-      },
-      {
-        "name": "flavortext",
-        "title": "Flavor Text",
-        "width": 2,
-        "file": "flavor.html",
-        "headerColor": "#525F78"
-      },
-      {
-        "name": "maps",
-        "title": "Map Scoreline",
-        "width": 2,
-        "file": "score.html",
-        "headerColor": "#525F78"
-      },
-      {
-        "name": "lowerthird",
-        "title": "Lower Third",
-        "width": 2,
-        "file": "name.html",
-        "headerColor": "#525F78"
-      },
-      {
-        "name": "casters",
-        "title": "Casters",
-        "width": 2,
-        "file": "casters.html",
-        "headerColor": "#525F78"
-      },
-      {
-        "name": "background",
-        "title": "Background",
-        "width": 2,
-        "file": "background.html",
-        "headerColor": "#525F78"
-      },
-      {
-        "name": "countdown",
-        "title": "Countdown",
-        "width": 2,
-        "file": "countdown.html",
-        "headerColor": "#525F78"
-      }
-    ],
-    "graphics": [
-      {
-        "file": "teamoverlay.html",
-        "width": 1920,
-        "height": 1080
-      },
-      {
-        "file": "gameBG.html",
-        "width": 1920,
-        "height": 1080
-      },
-      {
-        "file": "saturatedBG.html",
-        "width": 1920,
-        "height": 1080
-      },
-      {
-        "file": "lowerthird.html",
-        "width": 1920,
-        "height": 1080
-      },
-      {
-        "file": "Caster_Desk.html",
-        "width": 1920,
-        "height": 1080
-      },
-      {
-        "file": "brb_screen.html",
-        "width": 1920,
-        "height": 1080
-      },
-      {
-        "file": "pre_screen.html",
-        "width": 1920,
-        "height": 1080
-      },
-      {
-        "file": "team1Cams.html",
-        "width": 1920,
-        "height": 1080
-      },
-      {
-        "file": "team2Cams.html",
-        "width": 1920,
-        "height": 1080
-      }
-    ]
-  },
-  "dependencies": {
-    "axios": "^0.21.1",
-    "browserify": "^17.0.0",
-    "gsap": "^3.6.0",
-    "node-php": "^0.0.1",
-    "requirejs": "^2.3.6",
-    "sass": "^1.32.8",
-    "tedious": "^11.0.6"
-  }
+	"name": "valorant_manager",
+	"version": "0.0.0",
+	"files": [
+		"dashboard",
+		"graphics",
+		"extension.js",
+		"extension"
+	],
+	"keywords": [
+		"",
+		"nodecg-bundle"
+	],
+	"nodecg": {
+		"compatibleRange": "^1.1.1",
+		"dashboardPanels": [
+			{
+				"name": "teams",
+				"title": "Teams",
+				"width": 2,
+				"file": "teams.html",
+				"headerColor": "#525F78"
+			},
+			{
+				"name": "logos",
+				"title": "Logos",
+				"width": 2,
+				"file": "logos.html",
+				"headerColor": "#525F78"
+			},
+			{
+				"name": "teamCams",
+				"title": "Team Cameras",
+				"width": 2,
+				"file": "cameras.html",
+				"headerColor": "#525F78"
+			},
+			{
+				"name": "flavortext",
+				"title": "Flavor Text",
+				"width": 2,
+				"file": "flavor.html",
+				"headerColor": "#525F78"
+			},
+			{
+				"name": "maps",
+				"title": "Map Scoreline",
+				"width": 2,
+				"file": "score.html",
+				"headerColor": "#525F78"
+			},
+			{
+				"name": "lowerthird",
+				"title": "Lower Third",
+				"width": 2,
+				"file": "name.html",
+				"headerColor": "#525F78"
+			},
+			{
+				"name": "casters",
+				"title": "Casters",
+				"width": 2,
+				"file": "casters.html",
+				"headerColor": "#525F78"
+			},
+			{
+				"name": "background",
+				"title": "Background",
+				"width": 2,
+				"file": "background.html",
+				"headerColor": "#525F78"
+			},
+			{
+				"name": "countdown",
+				"title": "Countdown",
+				"width": 2,
+				"file": "countdown.html",
+				"headerColor": "#525F78"
+			}
+		],
+		"graphics": [
+			{
+				"file": "teamoverlay.html",
+				"width": 1920,
+				"height": 1080
+			},
+			{
+				"file": "agentselect.html",
+				"width": 1920,
+				"height": 1080
+			},
+			{
+				"file": "gameBG.html",
+				"width": 1920,
+				"height": 1080
+			},
+			{
+				"file": "saturatedBG.html",
+				"width": 1920,
+				"height": 1080
+			},
+			{
+				"file": "lowerthird.html",
+				"width": 1920,
+				"height": 1080
+			},
+			{
+				"file": "Caster_Desk.html",
+				"width": 1920,
+				"height": 1080
+			},
+			{
+				"file": "brb_screen.html",
+				"width": 1920,
+				"height": 1080
+			},
+			{
+				"file": "pre_screen.html",
+				"width": 1920,
+				"height": 1080
+			},
+			{
+				"file": "team1Cams.html",
+				"width": 1920,
+				"height": 1080
+			},
+			{
+				"file": "team2Cams.html",
+				"width": 1920,
+				"height": 1080
+			}
+		]
+	},
+	"dependencies": {
+		"axios": "^0.21.1",
+		"browserify": "^17.0.0",
+		"gsap": "^3.6.0",
+		"node-php": "^0.0.1",
+		"requirejs": "^2.3.6",
+		"sass": "^1.32.8",
+		"tedious": "^11.0.6"
+	}
 }
