@@ -1,25 +1,27 @@
-@import url("https://use.typekit.net/eiq2vgd.css");
+@import url('https://use.typekit.net/eiq2vgd.css');
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
 
+@font-face {
+	font-family: 'MuroSlant';
+	src: url('fonts/Muroslant.otf') format('opentype');
+}
+
 .caster {
-    position: absolute;
-    top: 670px;
-    
-    text-align: center;
-    letter-spacing: 0px;
-    text-shadow: 0px 3px 6px #00000029;
-    font-family: Play, sans-serif;
-    font-weight: 700;
-    font-size: 54px;
-    letter-spacing: 0px;
-    color: #FFFFFF;
-    text-shadow: 0px 5px 10px #00000029;
-    width: 810px;
+	position: absolute;
+	top: 247px;
+	letter-spacing: 0px;
+	text-shadow: 0px 3px 6px #00000029;
+	font-family: 'MuroSlant', sans-serif;
+	font-size: 56px;
+	letter-spacing: 0px;
+	color: #ffffff;
+	text-shadow: 0px 5px 10px #00000029;
+	width: 270px;
 }
 
 body {
-	background: black 0% 0% no-repeat padding-box;
+	background-image: url('./images/Layout.png');
 	top: 0px;
 	left: 0px;
 	width: 1920px;
@@ -28,13 +30,9 @@ body {
 }
 
 #leftCaster {
-    left: 110px;
-    text-align: center;
+	left: 70px;
 }
 
 #rightCaster {
-    right: 110px;
-    text-align: center;
-
+	left: 977px;
 }
-

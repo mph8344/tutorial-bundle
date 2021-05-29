@@ -1,76 +1,76 @@
 @font-face {
-    font-family: Proxima-Nova;
-    src: url('fonts/proxima.otf') format('opentype');
+	font-family: Proxima-Nova;
+	src: url('fonts/proxima.otf') format('opentype');
+}
+
+@font-face {
+	font-family: 'Muro';
+	src: url('fonts/Muro.otf') format('opentype');
 }
 
 body {
-	font-family: 'Play', sans-serif;
-	font-weight: bold;
-    font-size: 24px;
+	font-family: 'Muro', sans-serif;
+	font-size: 28px;
+
 	background: white;
-    color: white;
-    background-image: url('./images/ValorantLayout.png')
+	color: white;
+	background-image: url('./images/alibanner.png');
 }
 
-
 .team {
-    position: absolute;
-    width: 155px;
-    height: 38px;
-    top: 33px;
-    
+	position: absolute;
+	width: 155px;
+	height: 38px;
+	top: 33px;
 }
 
 .score {
-    position: absolute;
-    width: 40px;
-    height: 38px;
-    top: 32px;
-    font-size: 30px;
-    text-align: center;
-    color: black;
+	position: absolute;
+	width: 40px;
+	height: 38px;
+	top: 32px;
+	font-size: 30px;
+	text-align: center;
+	color: black;
 }
 
 .side {
-    font-size: 16px;
-    position: absolute;
-    width: 50px;
-    height: 16px;
-    top: 40px;
-    text-align: center;
-   
+	font-size: 16px;
+	position: absolute;
+	width: 50px;
+	height: 16px;
+	top: 40px;
+	text-align: center;
 }
-
 
 #leftScore {
-    left: 220px;
-    display: none;
-    
+	left: 220px;
+	display: none;
 }
 #rightScore {
-    right: 220px;
-    display: none;
+	right: 220px;
+	display: none;
 }
 
 .teamText {
-    font-family: 'Proxima-Nova';
-    font-weight: bold;
-    padding-top: 5px;
+	font-family: 'Muro';
+
+	padding-top: 5px;
 }
 
 #leftText {
-    padding-left: 5px;
+	padding-left: 5px;
 }
 
 #rightText {
-    text-align: right;
-    padding-right: 5px;
+	padding-right: 5px;
 }
 
 #rightTeam {
-    right: 265px;
+	text-align: right;
+	right: 245px;
 }
 
 #leftTeam {
-    left: 265px;
+	left: 245px;
 }
