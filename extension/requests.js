@@ -5,6 +5,7 @@ const axios = require('axios');
 const nodecg = require('./nodecg-api-context').get();
 const request = require('request');
 const keyconfig = require('../key-config.json');
+const { isNull } = require('gulp-util');
 
 /**
  * Base Parameters for the axios calls
@@ -76,28 +77,31 @@ function addPastData(data, scores) {
 			},
 		};
 
-		var winnerIsOne = element.results.winner == 'faction1';
+		if (element != undefined && element.results != undefined) {
+			//console.log(element.results);
+			var winnerIsOne = element.results.winner == 'faction1';
 
-		request.get(options, (err, response, body) => {
-			var o = JSON.parse(body);
-			if (o.rounds != undefined && o.rounds.length > 2) {
-				scores.push('(2-1)');
-				///console.log(o.rounds.length);
-			} else if (o.rounds != undefined) {
-				scores.push('(2-0)');
+			request.get(options, (err, response, body) => {
+				var o = JSON.parse(body);
+				if (o.rounds != undefined && o.rounds.length > 2) {
+					scores.push('(2-1)');
+					///console.log(o.rounds.length);
+				} else if (o.rounds != undefined) {
+					scores.push('(2-0)');
+				} else {
+					scores.push('(FFW)');
+				}
+			});
+
+			var str;
+			if (winnerIsOne) {
+				str = `${team1Name} vs ${team2Name}`;
 			} else {
-				scores.push('(FFW)');
+				str = `${team2Name} vs ${team1Name}`;
 			}
-		});
 
-		var str;
-		if (winnerIsOne) {
-			str = `${team1Name} vs ${team2Name}`;
-		} else {
-			str = `${team2Name} vs ${team1Name}`;
+			matches.push(str);
 		}
-
-		matches.push(str);
 	});
 
 	return matches;
