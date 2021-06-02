@@ -1,23 +1,5 @@
 var myTimer;
 
-var matches = [];
-
-nodecg.listenFor('changeMatches', (data) => {
-	matches = data.matches;
-
-	var text = data.past[0] + ' - ' + data.scores[0];
-
-	for (let i = 1; i < data.past.length; i++) {
-		text += '  |  ' + data.past[i] + ' - ' + data.scores[i];
-	}
-
-	$('.scroller').html(text);
-});
-
-$(function () {
-	displayClass(0);
-});
-
 nodecg.listenFor('timechange', (data) => {
 	var $timer = $('.counter');
 
@@ -27,7 +9,6 @@ nodecg.listenFor('timechange', (data) => {
 	dt.setSeconds(data.seconds);
 
 	var temp = dt.toTimeString().split(' ');
-	console.log(temp);
 	var ts = temp[0].split(':');
 
 	$timer.html(ts[1] + ':' + ts[2]);
@@ -64,18 +45,20 @@ nodecg.listenFor('flavorChange', (data) => {
 	$flavor.text(text);
 });
 
-function displayClass(i) {
-	if (isNaN(i)) {
-		i = 0;
-	}
+// function updateTime(timeName, data) {
+// 	var seconds = data.seconds < 10 ? `0${data.seconds}` : `${data.seconds}`;
+// 	var minutes = data.minutes;
 
-	$('.upcoming_matches')
-		.html(matches[i])
-		.fadeIn(1000, function () {
-			$(this)
-				.delay(2000)
-				.fadeOut(1000, function () {
-					displayClass((i + 1) % matches.length);
-				});
-		});
-}
+// 	$('#topTime').text(`${minutes}:${seconds}`);
+
+// }
+
+nodecg.listenFor('crossOut', (data) => {
+	console.log(data.lineName);
+
+	var decoration = data.value ? 'line-through' : '';
+	var color = data.value ? '#b3b4b5' : 'white';
+
+	$(data.lineName).css('text-decoration', decoration);
+	$(data.lineName).css('color', color);
+});

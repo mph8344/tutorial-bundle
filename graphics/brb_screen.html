@@ -1,46 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" href="https://use.typekit.net/eiq2vgd.css">
-	<link rel="stylesheet" href="brb_screen.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<link href="https://fonts.googleapis.com/css?family=Staatliches&display=swap" rel="stylesheet">
-</head>
-<body>
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="https://use.typekit.net/eiq2vgd.css" />
+		<link rel="stylesheet" href="brb_screen.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<link
+			href="https://fonts.googleapis.com/css?family=Staatliches&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<div class="counter">30:00</div>
 
-	
-	<div class="matchbox">
-		<p>
-		UPCOMING MATCHES:
-		</p>
-		<div class="upcoming_matches" id="upcoming">
-	
-		</div>
-	</div>
+		<div class="textbox" id="topText">STARTS AT</div>
+		<div class="timezone" id="topZone">PM EST</div>
+		<div class="timebox" id="topTime">1:00</div>
+		<div class="box" id="top">NACCS STAFF SHOWDOWN</div>
 
-	<div class="counter">
-		30:00
-	</div>
+		<div class="textbox" id="midText">ESTIMATE</div>
+		<div class="timezone" id="midZone">PM EST</div>
+		<div class="timebox" id="midTime">2:00</div>
+		<div class="box" id="mid">REPLICATION RAMPAGE</div>
 
-	<div id="flavor" class="flavorText">
-		FACEIT COLLEGIATE PLAYOFFS - WEEK 3
-	</div> 
+		<div class="textbox" id="botText">ESTIMATE</div>
+		<div class="timezone" id="botZone">PM EST</div>
+		<div class="timebox" id="botTime">3:00</div>
+		<div class="box" id="bot">ALL STAR GAME (3x Bo1)</div>
 
-	<div class="marquee">
-		<p class="scroller">
-			Big Long Text String Test
-		</p>
-	</div>
-
-
-	<video playsinline autoplay muted loop id="casters">
-		<source id="brb_video" src="images/FACEITInt.webm"type="video/webm">
-	</video>
-
-	
-
-
-	<script src="brb_screen.js"></script>
-</body>
+		<script src="brb_screen.js"></script>
+	</body>
 </html>

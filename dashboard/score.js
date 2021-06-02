@@ -1,9 +1,7 @@
+const team1Rep = nodecg.Replicant('team1score', { defaultValue: 0 });
+const team2Rep = nodecg.Replicant('team2score', { defaultValue: 0 });
 
-const team1Rep = nodecg.Replicant('team1score', {defaultValue: 0});
-const team2Rep = nodecg.Replicant('team2score', {defaultValue: 0});
-
-const bo3Box = document.getElementById("checkbox");
-
+const bo3Box = document.getElementById('checkbox');
 
 function addTeam1() {
 	team1Rep.value++;
@@ -26,11 +24,9 @@ function subTeam2() {
 }
 
 function swap() {
-
 	var temp = team1Rep.value;
 	team1Rep.value = team2Rep.value;
 	team2Rep.value = temp;
-
 }
 
 function resetScore() {
@@ -38,7 +34,7 @@ function resetScore() {
 	team2Rep.value = 0;
 }
 
-bo3Box.addEventListener('change', function() {
-	data = { value: bo3Box.checked }
-	nodecg.sendMessage('bo3Toggle', data)
-})
+bo3Box.addEventListener('change', function () {
+	data = { value: bo3Box.checked };
+	nodecg.sendMessage('bo3Toggle', data);
+});
