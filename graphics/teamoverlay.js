@@ -35,11 +35,10 @@ nodecg.listenFor('bo3Toggle', (data) => {
 	if (data.value) {
 		team1Score.style.display = 'block';
 		team2Score.style.display = 'block';
-		document.body.style.backgroundImage = 'url("./images/bo3Layout.png")';
+		document.body.style.backgroundImage = 'url("./images/Bo3.png")';
 	} else {
 		team1Score.style.display = 'none';
 		team2Score.style.display = 'none';
-		document.body.style.backgroundImage =
-			'url("./images/ValorantLayout.png")';
+		document.body.style.backgroundImage = 'url("./images/alibanner.png")';
 	}
 });
