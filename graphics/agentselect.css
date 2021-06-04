@@ -1,0 +1,26 @@
+@import url('https://use.typekit.net/eiq2vgd.css');
+
+body {
+	font-family: ScoutCond;
+	font-weight: bold;
+	font-size: 75px;
+	color: black;
+	background-image: url('./images/Overlay.png');
+}
+
+.team {
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	top: 25px;
+	text-align: center;
+	width: 300px;
+}
+
+#left {
+	left: 450px;
+}
+
+#right {
+	right: 460px;
+}

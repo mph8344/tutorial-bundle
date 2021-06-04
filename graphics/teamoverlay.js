@@ -11,6 +11,7 @@ const name1Rep = nodecg.Replicant('team1Name');
 const name2Rep = nodecg.Replicant('team2Name');
 
 name1Rep.on('change', (value) => {
+	console.log('test');
 	$('#leftTeam').text(value.toUpperCase());
 });
 
