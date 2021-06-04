@@ -20,6 +20,15 @@
 	width: 270px;
 }
 
+#scoreboard {
+	background-image: url('./images/botLogos.png');
+	top: 0px;
+	left: 0px;
+	width: 1920px;
+	height: 1080px;
+	opacity: 1;
+}
+
 body {
 	background-image: url('./images/Layout.png');
 	top: 0px;
