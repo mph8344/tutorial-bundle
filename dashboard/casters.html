@@ -1,31 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Teams</title>
-</head>
-<body>
-	<span>Left Caster:</span>
-	<br>
-	<br>
-	<input type="text" id="leftCaster">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Teams</title>
+	</head>
+	<body>
+		<span>Left Caster:</span>
+		<br />
+		<br />
+		<input type="text" id="leftCaster" />
 
-	<br>
-	<br>
-	
-	<span>Right Caster:</span>
-	<br>
-	<br>
+		<br />
+		<br />
 
-	<input type="text" id="rightCaster">
-	<br>
-	<br>
+		<span>Right Caster:</span>
+		<br />
+		<br />
 
-	<button onclick="update()">Update</button>
+		<input type="text" id="rightCaster" />
+		<br />
+		<br />
 
-	<script src="./casters.js"></script>
-</body>
+		<button onclick="update()">Update</button>
+
+		<script>
+			const leftCaster = document.getElementById('leftCaster');
+			const rightCaster = document.getElementById('rightCaster');
+
+			function update() {
+				const data = {
+					leftCaster: leftCaster.value,
+					rightCaster: rightCaster.value,
+				};
+				nodecg.sendMessage('updateCasters', data);
+			}
+		</script>
+	</body>
 </html>

@@ -4,28 +4,46 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<style type = text/css>
-		
-		input[type='number']{
-			width: 35px;
-		}
-		
+		<style type="text/css">
+			input[type='number'] {
+				width: 35px;
+			}
 		</style>
 		<title>Flavor Text</title>
 	</head>
 	<body>
 		<div>
-			<input type="checkbox" id="checkboxTop" value="false">Top</input>
-			<br/>
-			<input type="checkbox" id="checkboxMid" value="false">Mid</input>
-			<br/>
-			<input type="checkbox" id="checkboxBot" value="false">Bottom</input>
-			<br/>
+			<input type="checkbox" id="checkboxTop" value="false" />Top
+			<br />
+			<input type="checkbox" id="checkboxMid" value="false" />Mid
+			<br />
+			<input type="checkbox" id="checkboxBot" value="false" />Bottom
+			<br />
 
 			<!-- <button onclick="update()">Update</button> -->
 		</div>
 
+		<script>
+			const flavorText = document.getElementById('flavorText');
 
-		<script src="./flavor.js"></script>
+			const topBox = document.getElementById('checkboxTop');
+			const midBox = document.getElementById('checkboxMid');
+			const botBox = document.getElementById('checkboxBot');
+
+			topBox.addEventListener('change', function () {
+				data = { value: topBox.checked, lineName: '#top' };
+				nodecg.sendMessage('crossOut', data);
+			});
+
+			midBox.addEventListener('change', function () {
+				data = { value: midBox.checked, lineName: '#mid' };
+				nodecg.sendMessage('crossOut', data);
+			});
+
+			botBox.addEventListener('change', function () {
+				data = { value: botBox.checked, lineName: '#bot' };
+				nodecg.sendMessage('crossOut', data);
+			});
+		</script>
 	</body>
 </html>

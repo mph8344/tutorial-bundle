@@ -1,24 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Backgrounds</title>
-</head>
-<body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Backgrounds</title>
+	</head>
+	<body>
+		<input
+			type="radio"
+			id="valorant"
+			name="option"
+			value="valorant"
+			checked="checked"
+		/>
+		<label for="valorant">Valorant</label>
+		<input type="radio" id="cs" name="option" value="cs" />
+		<label for="cs">CSGO</label>
+		<br />
+		<button onclick="update()">Update</button>
+		<br />
+		<p>Refresh Match Data:</p>
+		<button id="refreshButton" onclick="refresh()">Refresh</button>
 
-	<input type="radio" id="valorant" name="option" value="valorant" checked="checked"/>
-	<label for="valorant">Valorant</label>
-	<input type="radio" id="cs" name="option" value="cs"/>
-	<label for="cs">CSGO</label>
-    <br>
-	<button onclick="update()">Update</button>
-	<br>
-	<p>Refresh Match Data:</p>
-	<button id="refreshButton" onclick="refresh()">Refresh</button>
+		<script>
+			function update() {
+				var $boxValue = $('input[name="option"]:checked').val();
+				const data = { game: $boxValue };
+				nodecg.sendMessage('updateBG', data);
+			}
 
-	<script src="./background.js"></script>
-</body>
+			function refresh() {
+				$('#refreshButton').attr('disabled', true);
+
+				setTimeout(() => {
+					$('#refreshButton').attr('disabled', false);
+				}, 5000);
+
+				nodecg.sendMessage('refresh');
+			}
+		</script>
+	</body>
 </html>

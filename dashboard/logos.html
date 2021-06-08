@@ -1,29 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap" rel="stylesheet">
-    <meta charset="UTF-8">
-</head>
-<body>
-	<div>
-		<p>Team 1:</p>
-		<br/>
-		<select name="team1Logo" id="team1Logo"></select>
-		
-	</div>
-	
-	<div>
-		<p>Team 2:</p>
-		<br/>
-		<select name="team2Logo" id="team2Logo"></select>
-	
-	</div>
+	<head>
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap"
+			rel="stylesheet"
+		/>
+		<meta charset="UTF-8" />
+	</head>
+	<body>
+		<div>
+			<p>Team 1:</p>
+			<br />
+			<select name="team1Logo" id="team1Logo"></select>
+		</div>
 
-    <br/>
-	<button onclick="update()">Update</button>
+		<div>
+			<p>Team 2:</p>
+			<br />
+			<select name="team2Logo" id="team2Logo"></select>
+		</div>
 
-	<script src="logos.js"></script>
-</body>
+		<br />
+		<button onclick="update()">Update</button>
+
+		<script>
+			const team1Input = document.getElementById('team1Logo');
+			const team2Input = document.getElementById('team2Logo');
+			const teams = nodecg.Replicant('teams');
+
+			NodeCG.waitForReplicants(teams).then(() => {
+				$(function () {
+					var $team1Logo = $('#team1Logo');
+					var $team2Logo = $('#team2Logo');
+
+					teams.value.forEach((row) => {
+						$team1Logo.append(
+							$('<option />').val(row.image).text(row.name)
+						);
+						$team2Logo.append(
+							$('<option />').val(row.image).text(row.name)
+						);
+					});
+				});
+			});
+
+			teams.on('change', () => {
+				var $team1Logo = $('#team1Logo');
+				var $team2Logo = $('#team2Logo');
+
+				teams.value.forEach((row) => {
+					$team1Logo.append(
+						$('<option />').val(row.image).text(row.name)
+					);
+					$team2Logo.append(
+						$('<option />').val(row.image).text(row.name)
+					);
+				});
+			});
+
+			function update() {
+				const data = {
+					team1Logo: team1Input.value,
+					team2Logo: team2Input.value,
+				};
+				nodecg.sendMessage('updateLogos', data);
+			}
+		</script>
+	</body>
 </html>

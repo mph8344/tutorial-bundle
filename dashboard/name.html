@@ -1,21 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Name</title>
-</head>
-<body>
-	<span>Name</span>
-	<input type="text" id="name">
-	<br>
-	<span>Twitter</span>
-	<input type="text" id="twitter">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Name</title>
+	</head>
+	<body>
+		<span>Name</span>
+		<input type="text" id="name" />
+		<br />
+		<span>Twitter</span>
+		<input type="text" id="twitter" />
 
-	<button onclick="update()">Update</button>
-	<button onclick="hideThird()">Hide</button>
+		<button onclick="update()">Update</button>
+		<button onclick="hideThird()">Hide</button>
 
-	<script src="name.js"></script>
-</body>
+		<script>
+			const nameInput = document.getElementById('name');
+			const twitterInput = document.getElementById('twitter');
+
+			function update() {
+				const data = {
+					name: nameInput.value,
+					twitter: twitterInput.value,
+				};
+				nodecg.sendMessage('showLowerthird', data);
+			}
+
+			function hideThird() {
+				nodecg.sendMessage('hideLowerThird');
+			}
+		</script>
+	</body>
 </html>

@@ -27,6 +27,25 @@
 			<button onclick="preCountdown()">Start Pre-Show Countdown</button>
 		</div>
 
-		<script src="./countdown.js"></script>
+		<script>
+			const seconds = document.getElementById('seconds');
+			const minutes = document.getElementById('minutes');
+
+			function brbCountdown() {
+				data = {
+					minutes: minutes.value,
+					seconds: seconds.value,
+					timeName: '#topTime',
+				};
+
+				nodecg.sendMessage('timechange', data);
+			}
+
+			function preCountdown() {
+				data = { minutes: minutes.value, seconds: seconds.value };
+
+				nodecg.sendMessage('preTimer', data);
+			}
+		</script>
 	</body>
 </html>
