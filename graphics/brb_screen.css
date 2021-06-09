@@ -62,6 +62,10 @@ body {
 	top: 674px;
 }
 
+#bottom {
+	top: 797px;
+}
+
 .textbox {
 	position: absolute;
 	left: 827px;
