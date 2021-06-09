@@ -13,11 +13,17 @@
 	</head>
 	<body>
 		<div>
-			<input type="checkbox" id="checkboxTop" value="false" />Top
+			<input type="checkbox" id="checkboxTop" value="false" />Staff
+			Showdown
 			<br />
-			<input type="checkbox" id="checkboxMid" value="false" />Mid
+			<input type="checkbox" id="checkboxMid" value="false" />1v1
+			Tournament
 			<br />
-			<input type="checkbox" id="checkboxBot" value="false" />Bottom
+			<input type="checkbox" id="checkboxBot" value="false" />Skills
+			Showcase
+			<br />
+			<input type="checkbox" id="checkboxBottom" value="false" />All Star
+			Game
 			<br />
 
 			<!-- <button onclick="update()">Update</button> -->
@@ -29,6 +35,7 @@
 			const topBox = document.getElementById('checkboxTop');
 			const midBox = document.getElementById('checkboxMid');
 			const botBox = document.getElementById('checkboxBot');
+			const bottomBox = document.getElementById('checkboxBottom');
 
 			topBox.addEventListener('change', function () {
 				data = { value: topBox.checked, lineName: '#top' };
@@ -42,6 +49,11 @@
 
 			botBox.addEventListener('change', function () {
 				data = { value: botBox.checked, lineName: '#bot' };
+				nodecg.sendMessage('crossOut', data);
+			});
+
+			botBox.addEventListener('change', function () {
+				data = { value: bottomBox.checked, lineName: '#bottom' };
 				nodecg.sendMessage('crossOut', data);
 			});
 		</script>
