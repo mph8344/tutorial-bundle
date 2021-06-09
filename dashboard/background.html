@@ -24,6 +24,8 @@
 		<p>Refresh Match Data:</p>
 		<button id="refreshButton" onclick="refresh()">Refresh</button>
 
+		<button id="newbutton" onclick="thing()">Thing</button>
+
 		<script>
 			function update() {
 				var $boxValue = $('input[name="option"]:checked').val();
@@ -39,6 +41,10 @@
 				}, 5000);
 
 				nodecg.sendMessage('refresh');
+			}
+
+			function thing() {
+				nodecg.sendMessage('leaderboard', { show: true });
 			}
 		</script>
 	</body>

@@ -1,0 +1,38 @@
+@font-face {
+	font-family: 'Muro';
+	src: url('fonts/Muro.otf') format('opentype');
+}
+
+body {
+	font-family: Lato, sans-serif;
+	font-weight: 900;
+	font-size: 31px;
+
+	background: white;
+	color: white;
+
+	text-align: left;
+	transition-duration: 2s;
+}
+
+.bg {
+	right: 0;
+	top: 0;
+	width: 1920px;
+	height: 1080px;
+	position: absolute;
+	background-image: url('./images/leaderboard.png');
+	transition-duration: 2s;
+}
+
+.right {
+	position: absolute;
+	right: 10px;
+	width: 150px;
+}
+
+.left {
+	position: absolute;
+	right: 210px;
+	width: 150px;
+}

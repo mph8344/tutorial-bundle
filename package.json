@@ -15,6 +15,13 @@
 		"compatibleRange": "^1.1.1",
 		"dashboardPanels": [
 			{
+				"name": "leaderboard",
+				"title": "Leaderboard",
+				"width": 2,
+				"file": "leaderboard.html",
+				"headerColor": "#525F78"
+			},
+			{
 				"name": "teams",
 				"title": "Teams",
 				"width": 2,
@@ -85,7 +92,7 @@
 				"height": 1080
 			},
 			{
-				"file": "agentSelect/agentselect.html",
+				"file": "agentselect.html",
 				"width": 1920,
 				"height": 1080
 			},
@@ -126,6 +133,11 @@
 			},
 			{
 				"file": "team2Cams.html",
+				"width": 1920,
+				"height": 1080
+			},
+			{
+				"file": "leaderboard.html",
 				"width": 1920,
 				"height": 1080
 			}
