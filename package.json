@@ -1,6 +1,9 @@
 {
 	"name": "valorant_manager",
 	"version": "0.0.0",
+	"scripts": {
+		"start": "tsc && nodecg start"
+	},
 	"files": [
 		"dashboard",
 		"graphics",
@@ -132,5 +135,8 @@
 		"requirejs": "^2.3.6",
 		"sass": "^1.32.8",
 		"tedious": "^11.0.6"
+	},
+	"devDependencies": {
+		"@types/soundjs": "^0.6.28"
 	}
 }
