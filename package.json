@@ -2,7 +2,7 @@
 	"name": "valorant_manager",
 	"version": "0.0.0",
 	"scripts": {
-		"start": "tsc && nodecg start"
+		"start": "tsc && cd ../../ && nodecg start"
 	},
 	"files": [
 		"dashboard",
@@ -72,9 +72,21 @@
 				"width": 2,
 				"file": "countdown.html",
 				"headerColor": "#525F78"
+			},
+			{
+				"name": "leaderboard",
+				"title": "Leaderboard",
+				"width": 2,
+				"file": "leaderboard.html",
+				"headerColor": "#525F78"
 			}
 		],
 		"graphics": [
+			{
+				"file": "leaderboard.html",
+				"width": 1920,
+				"height": 1080
+			},
 			{
 				"file": "teamoverlay.html",
 				"width": 1920,

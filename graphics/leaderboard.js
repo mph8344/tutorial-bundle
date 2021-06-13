@@ -13,8 +13,12 @@ $(
 	})
 );
 
-nodecg.listenFor('.leaderUpdate', (data) => {
-	//$(`#${data.position}`).text(data.name);
+nodecg.listenFor('updateLeaderboard', (data) => {
+	console.log(`${data.num1}, ${data.val1}`);
+	console.log(`${data.num2}, ${data.val2}`);
+
+	$(`#${data.num1}`).text(data.val1);
+	$(`#${data.num2}`).text(data.val2);
 });
 
 nodecg.listenFor('leaderboard', (show = data.show) => {
